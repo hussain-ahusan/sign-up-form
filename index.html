@@ -7,19 +7,21 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <div id="side">
+        <div id="banner">
+            <div id="header">
+                <p>VILUFUSHI</p>
+            </div>
             <img class="side" alt="palm trees" src="./IMG_20250301_062241.jpg">
         </div>
         <div id="signup-section">
             <div class="intro">
                 <p>Welcome to your favourite vacation spot. The beautiful Vilufushi island. Vilufushi is one of the best
                 tourist attractions in the world. If you are looking for the perfect location for your next vacation trip,
-                look no further, you are at the right place.
+                look no further, you are at the right place. Let's do this!
                 </p>
-                <h3>To learn more, please sign-up!</h3>
-                <p>Let's do this!</p>
             </div>
             <div>
+                <h1>To learn more, please sign-up!</h1>
                 <form class="form">
                     <div class="input">
                         <label for="fname">Name *</label>
@@ -55,5 +57,23 @@
                 </form>
             </div>
         </div>
+        <script>
+            const button = document.querySelector('button');
+            console.log(button)
+            const changeBorder = function() {
+                const passMatch = document.querySelector('#password[required]');
+                const confirmation = document.querySelector('#confirmation[required]');
+
+                if(passMatch.value !== confirmation.value) {
+                passMatch.style.border = '3px solid red';
+                confirmation.style.border = '3px solid red';
+                } else {
+                    passMatch.style.border = '3px solid #3c6d18';
+                    confirmation.style.border = '3px solid #3c6d18';
+                }
+            };
+
+            button.addEventListener('click', changeBorder)
+        </script>
     </body>
 </html>
