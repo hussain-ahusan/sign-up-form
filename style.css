@@ -82,20 +82,26 @@ h1, h2, h3, h4, h5, h6 {
   
 }
 
+@font-face {
+    font-family: 'fugaz_oneregular';
+    src: url('./fonts/fugazone-regular-webfont.woff2') format('woff2'),
+         url('./fonts/fugazone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  font-display: swap;
+}
+
 #header {
-  border: 5px solid #000000;
   font-family: 'changoregular';
   position: absolute;
-  margin-left: rem;
-  font-size: clamp(1rem, 3vw, 10rem);
-  color: #000000;
   text-align: center;
-  width: 40vw;
-  height: 5vh;
+  font-size: clamp(1rem, 3vw, 10rem);
+  background-image: linear-gradient();
+  text-align: center;
 }
+
 #banner{
   height: 100vh;
-  background-color: aqua;
   width: 50vw;
 }
 
@@ -113,23 +119,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "makoregular";
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  overflow-y: scroll;
 }
 
 .intro {
   margin-bottom: 15px;
   text-align: justify;
-  font-size: clamp(1.5rem, 1.5vw, 5rem);
-}
-
-h3 {
-  font-style: italic;
-  margin-bottom: 15px;
-}
-
-h3 {
-  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(1.5rem, 1.5vw, 3rem);
 }
 
 .form {
@@ -138,11 +136,7 @@ h3 {
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
-<<<<<<< HEAD
   justify-content: space-around;
-=======
-  justify-content: center;
->>>>>>> 4aa948027dd0e1ce86da9f585f150cf755edfc35
   margin-top: 15px;
   border: 5px solid rgb(56, 53, 53);
   border-radius: 10px;
@@ -169,6 +163,7 @@ button:hover{
   background: #438017;
   color: white;
 }
+
 input:focus{
   outline:none;
 }
@@ -185,12 +180,14 @@ input::placeholder {
   color: transparent;
 }
 
+#quote {
+  font-family: 'fugaz_oneregular';
+  font-size: clamp(1rem, 1.5vw, 3rem);
+  font-weight: bolder;
+}
+
 
 @media  screen and (max-width: 600px) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
   form {
     display: flex;
     flex-direction: row;
@@ -198,10 +195,15 @@ input::placeholder {
     justify-content: center;
     flex-wrap: wrap;
     padding: 10px;
+    width: 40vw;
+  }
+
+  #signup-section {
+    padding: 0;
   }
 
   input, select, button {
-    width: 50vw;
+    width: 40vw;
   }
 
   button {
@@ -212,13 +214,19 @@ input::placeholder {
     height: 40vh;
   }
 
-  #banner>img {
-    object-fit: none;
-    height: auto;
-    width: auto;
-  }
-
   #banner, #signup-section {
     width: 100vw;
+  }
+
+  label {
+    display: none;
+  }
+
+  input::placeholder {
+    color: #000000;
+  }
+
+  .intro, h1 {
+    font-size: clamp(1rem, 2vw, 3rem);
   }
 }
